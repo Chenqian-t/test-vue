@@ -2,6 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <img :src="src">
+    <h6>{{aa}}</h6>
   </div>
 </template>
 
@@ -13,6 +14,11 @@ export default Vue.extend({
   props: {
     msg: Object,
     src: String,
+  },
+  data(){
+    return {
+      aa: 'hehe',
+    }
   },
 });
 </script>

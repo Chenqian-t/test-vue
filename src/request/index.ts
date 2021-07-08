@@ -16,4 +16,12 @@ export class User {
             url: `${baseURL}/img`
         });
     }
+
+    static shayebushi(data?:object) {
+        return instance({
+            method: 'post',
+            url: `${baseURL}/img`,
+            data
+        });
+    }
 }
