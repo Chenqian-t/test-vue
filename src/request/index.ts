@@ -1,6 +1,6 @@
 import instance from './request';
 
-const baseURL = '';
+const baseURL = '/test';
 
 export class User {
     static userinfo(data?:object) {

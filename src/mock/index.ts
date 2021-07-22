@@ -1,6 +1,6 @@
 import Mock, { Random } from 'mockjs';
 
-const baseURL = 'http://192.168.6.191:3336';
+const baseURL = 'http://192.168.6.191:3336/test';
 
 Mock.mock(`${baseURL}/userinfo`, {
     errcode: 0,
@@ -23,5 +23,5 @@ Mock.mock(`${baseURL}/userinfo`, {
 Mock.mock(`${baseURL}/img`, {
     errcode: 0,
     message: 'ok',
-    data: Random.dataImage('200x100', Random.date('yyyy-MM-dd'))
+    data: Random.dataImage('200x100', Random.date('yyyy-MM-dd HH:mm:ss'))
 });
