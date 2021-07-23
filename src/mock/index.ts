@@ -1,6 +1,6 @@
 import Mock, { Random } from 'mockjs';
 Mock.setup({
-    timeout: 1000
+    timeout: 200
 });
 
 const baseURL = 'http://192.168.6.191:3336';

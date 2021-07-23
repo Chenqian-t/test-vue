@@ -3,6 +3,15 @@
     <h1>{{ msg }}</h1>
     <img :src="src">
     <h6>{{aa}}</h6>
+    <h6>{{bb}}</h6>
+    <label>
+      {{ label }}
+      <input
+        v-bind="$attrs"
+        v-bind:value="value"
+        v-on:input="$emit('input', $event.target.value)"
+      >
+    </label>
   </div>
 </template>
 
@@ -11,9 +20,13 @@ import Vue from 'vue';
 
 export default Vue.extend({
   name: 'HelloWorld',
+  inheritAttrs: false,
   props: {
     msg: Object,
     src: String,
+    bb: Boolean,
+    label: String,
+    value: String
   },
   data(){
     return {
