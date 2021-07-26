@@ -1,12 +1,30 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">a</router-link> |
-      <router-link to="/about">b</router-link>
+    <div id="nav" v-if="$route.name !== 'NotFound'">
+      <router-link :to="{name: 'Home'}">a</router-link> |
+      <router-link to="/about/123">b</router-link>
     </div>
-    <router-view/>
+    <transition :name="transitionName">
+      <router-view/>
+    </transition>
   </div>
 </template>
+
+<script lang="ts">
+import Vue from 'vue'
+export default Vue.extend({
+  name: 'App',
+  data(){
+    return {
+      transitionName: 'fade',
+    }
+  },
+  mounted(){
+    console.log(this.$route);
+    
+  },
+})
+</script>
 
 <style lang="less">
 #app {
@@ -28,5 +46,11 @@
       color: #42b983;
     }
   }
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 </style>
