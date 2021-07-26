@@ -1,12 +1,14 @@
 <template>
   <div class="home">
-    <HelloWorld :msg="msg" :src="src" />
+    <!-- <HelloWorld :msg="msg" :src="src" /> -->
+    <AsyncTest />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
 import HelloWorld from "@/components/HelloWorld/index.vue";
+import AsyncTest from "@/components/AsyncTest/index.vue";
 import { User } from "@/request";
 
 export default Vue.extend({
@@ -19,6 +21,7 @@ export default Vue.extend({
   },
   components: {
     HelloWorld,
+    AsyncTest,
   },
   async mounted() {
     let ret = await User.userinfo();
