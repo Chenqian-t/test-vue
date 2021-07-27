@@ -1,6 +1,6 @@
 module.exports = {
     outputDir: './pages',
-    publicPath: '/',
+    publicPath: '/test-vue/pages',
     assetsDir: './tt',
     pages: {
         index: {
